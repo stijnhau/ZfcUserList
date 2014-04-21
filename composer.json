@@ -1,0 +1,7 @@
+{
+    "name": "stijnhau/ZfcUserList",
+    "description": "an userlist for ZfcUser that is easy customisable.",
+    "require": {
+        "php": ">=5.3.0"
+    }
+}
