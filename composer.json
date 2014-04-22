@@ -1,7 +1,27 @@
 {
     "name": "stijnhau/zfc-user-list",
     "description": "an userlist for ZfcUser that is easy customisable.",
+    "type": "library",
+    "keywords": [
+        "zf2"
+    ],
+    "homepage": "https://github.com/stijnhau/ZfcUserList.git",
+    "authors": [
+        {
+            "name": "Daniel Strøm",
+            "email": "daniel@eye4web.dk"
+        }
+    ],
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.3.3",
+        "zf-commons/zfc-user": ">=0.1.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "ZfcUserAdmin": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
     }
 }
