@@ -8,8 +8,8 @@
     "homepage": "https://github.com/stijnhau/ZfcUserList.git",
     "authors": [
         {
-            "name": "Daniel Strøm",
-            "email": "daniel@eye4web.dk"
+            "name": "stijnhau",
+            "email": "Stijnhau@gmail.com"
         }
     ],
     "require": {
