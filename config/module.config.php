@@ -7,7 +7,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'zfcuserlist' => 'ZfcUserAdmin\Controller\UserListController',
+            'zfcuserlist' => 'ZfcUserList\Controller\UserListController',
         ),
     ),
     'router' => array(
