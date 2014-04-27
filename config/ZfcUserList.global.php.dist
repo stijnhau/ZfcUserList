@@ -1,0 +1,38 @@
+<?php
+/**
+ * ZfcUserList Configuration
+ *
+ * If you have a ./config/autoload/ directory set up for your project, you can
+ * drop this config file in it and change the values as you wish.
+ */
+$settings = array(
+    /**
+     * Mapper for ZfcUser
+     *
+     * Set the mapper to be used here
+     * Currently Available mappers
+     *
+     * ZfcUserList\Mapper\UserDoctrine
+     *
+     * By default this is using
+     * ZfcUserList\Mapper\UserZendDb
+     */
+    'user_mapper' => 'ZfcUserList\Mapper\UserZendDb',
+
+    /**
+     * [WIP]
+     */
+    'orderBy' => 'username',
+
+    /**
+     * [WIP]
+     */
+    'elements' => array("username", "email", "display_name"),
+);
+
+/**
+ * You do not need to edit below this line
+ */
+return array(
+    'zfcuserlist' => $settings
+);

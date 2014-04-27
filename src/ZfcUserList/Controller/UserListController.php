@@ -6,17 +6,12 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Paginator;
 use ZfcUser\Mapper\UserInterface;
 use ZfcUser\Options\ModuleOptions as ZfcUserModuleOptions;
-use ZfcUserAdmin\Options\ModuleOptions;
+use ZfcUserList\Options\ModuleOptions;
 
 class UserListController extends AbstractActionController
 {
     protected $options, $userMapper;
     protected $zfcUserOptions;
-    /**
-     * @var \ZfcUserAdmin\Service\User
-     */
-    protected $adminUserService;
-
     public function listAction()
     {
         $userMapper = $this->getUserMapper();
@@ -44,7 +39,7 @@ class UserListController extends AbstractActionController
     public function getOptions()
     {
         if (!$this->options instanceof ModuleOptions) {
-            $this->setOptions($this->getServiceLocator()->get('zfcuseradmin_module_options'));
+            $this->setOptions($this->getServiceLocator()->get('zfcuserlist_module_options'));
         }
         return $this->options;
     }

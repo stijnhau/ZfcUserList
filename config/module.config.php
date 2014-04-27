@@ -17,7 +17,7 @@ return array(
                     'zfcuserlist' => [
                         'type' => 'Segment',
                         'options' => [
-                            'route' => '/list',
+                            'route' => '/list[/:p]',
                             'defaults' => [
                                 'controller' => 'zfcuserlist',
                                 'action' => 'list'

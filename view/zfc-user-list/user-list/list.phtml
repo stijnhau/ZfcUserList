@@ -1,0 +1,42 @@
+<?php
+$this->headLink()->prependStylesheet('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css');
+
+$getters = array();
+foreach ($this->userlistElements as $element) {
+    $parts = explode('_', $element);
+    array_walk($parts, function (&$val) {
+        $val = ucfirst($val);
+    });
+    $getters[$element] = 'get' . implode('', $parts);
+}
+?>
+
+<table class="table">
+    <thead>
+        <tr>
+            <?php foreach ($this->userlistElements as $name => $element): ?>
+                <th><?php echo $this->escapeHtml($name ? : $element); ?></th>
+            <?php endforeach; ?>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->users as $user): ?>
+        <tr>
+            <?php foreach ($this->userlistElements as $element): ?>
+                <td class="cell cell-<?php echo $this->escapeHtml($element) ?>">
+                    <?php $parts = explode('_', $element); ?>
+                    <?php echo call_user_func(array($user, $getters[$element])); ?>
+                </td>
+            <?php endforeach; ?>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="<?php echo count($this->userlistElements) + 1; ?>">
+            <?php echo $this->paginationControl($this->users, 'Sliding', 'zfc-user-list/user-list/pagination_userlist.phtml'); ?>
+        </td>
+    </tr>
+    </tfoot>
+</table>
