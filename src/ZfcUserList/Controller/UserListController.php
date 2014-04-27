@@ -22,7 +22,7 @@ class UserListController extends AbstractActionController
             $paginator = $users;
         }
 
-        $paginator->setItemCountPerPage(100);
+        $paginator->setItemCountPerPage(10);
         $paginator->setCurrentPageNumber($this->getEvent()->getRouteMatch()->getParam('p'));
         return array(
             'users' => $paginator,
