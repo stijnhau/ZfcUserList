@@ -20,6 +20,11 @@ $settings = array(
     'user_mapper' => 'ZfcUserList\Mapper\UserZendDb',
 
     /**
+     * an array with as first the label and as second the fielsname in the database
+     */
+    'userListElements' => array('Id' => 'id', 'Email address' => 'email', 'Display name' => 'display_name')
+
+    /**
      * [WIP]
      */
     'orderBy' => 'username',
@@ -27,7 +32,7 @@ $settings = array(
     /**
      * [WIP]
      */
-    'elements' => array("username", "email", "display_name"),
+    'elementsPerPage' => '10',
 );
 
 /**

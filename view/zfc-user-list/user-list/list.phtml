@@ -15,7 +15,7 @@ foreach ($this->userlistElements as $element) {
     <thead>
         <tr>
             <?php foreach ($this->userlistElements as $name => $element): ?>
-                <th><?php echo $this->escapeHtml($name ? : $element); ?></th>
+                <th><?php echo $this->translate($this->escapeHtml($name ? : $element)); ?></th>
             <?php endforeach; ?>
             <th>&nbsp;</th>
         </tr>
