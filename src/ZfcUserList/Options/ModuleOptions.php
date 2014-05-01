@@ -19,6 +19,8 @@ class ModuleOptions extends AbstractOptions implements
      */
     protected $userListElements = array('Id' => 'id', 'Email address' => 'email');
 
+    protected $elementsPerPage = 10;
+
     protected $userMapper = 'ZfcUserList\Mapper\UserDoctrine';
 
     public function setUserMapper($userMapper)
@@ -39,5 +41,15 @@ class ModuleOptions extends AbstractOptions implements
     public function getUserListElements()
     {
         return $this->userListElements;
+    }
+
+    public function setElementsPerPage($elementsPerPage)
+    {
+        $this->elementsPerPage = $elementsPerPage;
+    }
+
+    public function getElementsPerPage()
+    {
+        return $this->elementsPerPage;
     }
 }
