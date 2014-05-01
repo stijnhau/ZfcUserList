@@ -25,14 +25,15 @@ $settings = array(
     'userListElements' => array('Id' => 'id', 'Email address' => 'email', 'Display name' => 'display_name')
 
     /**
-     * [WIP]
+     * The amount of elements(users) shown per page.
      */
-    'orderBy' => 'username',
+    'elementsPerPage' => '10',
+
 
     /**
      * [WIP]
      */
-    'elementsPerPage' => '10',
+    'orderBy' => 'username',
 );
 
 /**

@@ -1,4 +1,4 @@
-<?php if ($this->pageCount): ?>
+<?php if ($this->pageCount):?>
 
 <ul class="pagination ">
 
@@ -9,7 +9,7 @@
 
     <!-- Previous page link -->
     <li<?php echo (isset($this->previous)) ? '' : ' class="disabled"'; ?>>
-        <a href="<?php echo $this->url('zfcuser/zfcuserlist', array('p' => $this->previous-9)); ?>">&lt; Previous 10</a>
+        <a href="<?php echo $this->url('zfcuser/zfcuserlist', array('p' => $this->previous-$this->itemCountPerPage+1)); ?>">&lt; Previous <?php echo $this->itemCountPerPage; ?></a>
     </li>
 
     <!-- Numbered page links -->
@@ -21,7 +21,7 @@
 
     <!-- Next page link -->
     <li<?php echo (isset($this->next)) ? '' : ' class="disabled"'; ?>>
-        <a href="<?php echo $this->url('zfcuser/zfcuserlist', array('p' => $this->next+9)); ?>">Next 10 &gt;</a>
+        <a href="<?php echo $this->url('zfcuser/zfcuserlist', array('p' => $this->next+$this->itemCountPerPage-1)); ?>">Next <?php echo $this->itemCountPerPage; ?> &gt;</a>
     </li>
 
     <!-- Last page link -->
