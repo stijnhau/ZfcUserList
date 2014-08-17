@@ -21,7 +21,7 @@ class ModuleOptions extends AbstractOptions implements
 
     protected $elementsPerPage = 10;
 
-    protected $userMapper = 'ZfcUserList\Mapper\UserDoctrine';
+    protected $userMapper = 'ZfcUserList\Mapper\UserZendDb';
 
     public function setUserMapper($userMapper)
     {
