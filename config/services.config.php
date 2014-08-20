@@ -1,6 +1,5 @@
 <?php
 use Zend\ServiceManager\ServiceLocatorInterface;
-use ZfcUser\Mapper\UserHydrator;
 use ZfcUserList\Options;
 
 return array(
@@ -30,7 +29,7 @@ return array(
                 $mapper->setDbAdapter($sm->get('zfcuser_zend_db_adapter'));
                 $entityClass = $zfcUserOptions->getUserEntityClass();
                 $mapper->setEntityPrototype(new $entityClass);
-                $mapper->setHydrator(new UserHydrator());
+                $mapper->setHydrator($sm->get('zfcuser_user_hydrator'));
             }
 
             return $mapper;
