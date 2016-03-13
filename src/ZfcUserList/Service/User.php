@@ -2,13 +2,12 @@
 
 namespace ZfcUserList\Service;
 
-use Zend\ServiceManager\ServiceManagerAwareInterface;
 use Zend\ServiceManager\ServiceManager;
+use Zend\ServiceManager\ServiceManagerAwareInterface;
 use ZfcBase\EventManager\EventProvider;
-use ZfcUserList\Options\ModuleOptions;
 use ZfcUser\Mapper\UserInterface as UserMapperInterface;
 use ZfcUser\Options\ModuleOptions as ZfcUserModuleOptions;
-
+use ZfcUserList\Options\ModuleOptions;
 
 class User extends EventProvider implements ServiceManagerAwareInterface
 {
