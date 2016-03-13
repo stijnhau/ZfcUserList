@@ -11,7 +11,6 @@ namespace ZfcUserList;
 
 use Zend\ModuleManager\Feature\ServiceProviderInterface;
 
-
 class Module implements ServiceProviderInterface
 {
     public function getConfig()
