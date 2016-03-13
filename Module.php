@@ -34,4 +34,13 @@ class Module implements ServiceProviderInterface
     {
         return include __DIR__ . '/config/services.config.php';
     }
+
+    public function getControllerConfig()
+    {
+        return array(
+            'factories' => array(
+                'zfcuserlist' => 'ZfcUserList\Controller\Factory\UserListController',
+            ),
+        );
+    }
 }

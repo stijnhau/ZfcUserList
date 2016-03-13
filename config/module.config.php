@@ -5,11 +5,6 @@ return array(
             'zfcuserlist' => __DIR__ . '/../view',
         ),
     ),
-    'controllers' => array(
-        'invokables' => array(
-            'zfcuserlist' => 'ZfcUserList\Controller\UserListController',
-        ),
-    ),
     'router' => array(
         'routes' => array(
             'zfcuser' => [
