@@ -14,16 +14,16 @@ foreach ($this->userlistElements as $element) {
 <table class="table">
     <thead>
         <tr>
-            <?php foreach ($this->userlistElements as $name => $element): ?>
+            <?php foreach ($this->userlistElements as $name => $element) : ?>
                 <th><?php echo $this->translate($this->escapeHtml($name ? : $element)); ?></th>
             <?php endforeach; ?>
             <th>&nbsp;</th>
         </tr>
     </thead>
     <tbody>
-    <?php foreach ($this->users as $user): ?>
+    <?php foreach ($this->users as $user) : ?>
         <tr>
-            <?php foreach ($this->userlistElements as $element): ?>
+            <?php foreach ($this->userlistElements as $element) : ?>
                 <td class="cell cell-<?php echo $this->escapeHtml($element) ?>">
                     <?php $parts = explode('_', $element); ?>
                     <?php echo call_user_func(array($user, $getters[$element])); ?>
