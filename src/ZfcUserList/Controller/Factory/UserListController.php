@@ -3,17 +3,22 @@ namespace ZfcUserList\Controller\Factory;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
-use ZfcUserList\Controller\UserListController;
+use ZfcUserList\Controller\UserListController as controller;
+use Interop\Container\ContainerInterface;
 
 class UserListController implements FactoryInterface
 {
     public function createService(ServiceLocatorInterface $sm)
     {
-        $parentLocator = $sm->getServiceLocator();
+        return $this->__invoke($sm, "UserListController");
+    }
 
-        $controller = new UserListController(
-            $parentLocator->get("zfcuserlist_module_options"),
-            $parentLocator->get("zfcuser_user_mapper")
+
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
+    {
+        $controller = new controller(
+            $container->get("zfcuserlist_module_options"),
+            $container->get("zfcuser_user_mapper")
         );
         return $controller;
     }
